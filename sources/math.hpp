@@ -1,6 +1,7 @@
-#ifndef MATH_H_INCLUDED
-#define MATH_H_INCLUDED
+// math.hpp
+#ifndef MATH_HPP
+#define MATH_HPP
 
 int ajouteDeux(int x);
 
-#endif // MATH_H_INCLUDED
+#endif
