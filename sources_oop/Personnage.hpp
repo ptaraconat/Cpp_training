@@ -2,6 +2,7 @@
 #define PERSONNAGE_HPP
 
 #include <string>
+#include "Arme.hpp"
 
 class Personnage
 {
@@ -19,8 +20,7 @@ public:
 private:
     int m_vie;
     int m_mana;
-    std::string m_nomArme; //Pas de using namespace std, il faut donc mettre std:: devant string
-    int m_degatsArme;
+    Arme m_arme;
 };
 
 #endif

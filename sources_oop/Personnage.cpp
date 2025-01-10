@@ -8,16 +8,14 @@ Personnage::Personnage()
 {
     m_vie = 100;
     m_mana = 100;
-    m_nomArme = "epee rouille";
-    m_degatsArme = 10;
+    m_arme = Arme("Eppee rouille", 10);
 }
 
 Personnage::Personnage(string nomArme, int degatsArme)
 {
     m_vie = 100;
     m_mana = 100;
-    m_nomArme = nomArme;
-    m_degatsArme = degatsArme;
+    m_arme = Arme(nomArme, degatsArme);
 }
 
 Personnage::~Personnage()
@@ -40,7 +38,7 @@ void Personnage::recevoirDegats(int nbDegat)
 
 void Personnage::attaquer(Personnage &cible)
 {
-    cible.recevoirDegats(m_degatsArme);
+    cible.recevoirDegats(m_arme.getDegat());
 }
 
 void Personnage::boirePotionDeVie(int quantitePotion)
@@ -54,8 +52,7 @@ void Personnage::boirePotionDeVie(int quantitePotion)
 
 void Personnage::changerArme(string nomNouvellArme, int degatNouvelleArme)
 {
-    m_nomArme = nomNouvellArme;
-    m_degatsArme = degatNouvelleArme;
+    m_arme = Arme(nomNouvellArme, degatNouvelleArme);
 }
 
 bool Personnage::estVivant() const
@@ -65,6 +62,7 @@ bool Personnage::estVivant() const
 
 void Personnage::etatPersonnage() const 
 {
+    cout << "point de mana" << m_mana << endl;
     cout << "point de vie " << m_vie << endl; 
     if (this->estVivant())
     {
@@ -74,4 +72,5 @@ void Personnage::etatPersonnage() const
     {
         cout << "Le personnage est mort" << endl;
     }
+    m_arme.afficher();
 }

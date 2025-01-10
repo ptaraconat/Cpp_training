@@ -1,4 +1,5 @@
 #include "Personnage.hpp" 
+#include "Arme.hpp"
 #include <iostream>
 
 using namespace std;
@@ -6,6 +7,8 @@ using namespace std;
 int main()
 {
     Personnage david, goliath;
+    Arme epee;
+    Arme hache("hache", 43);
 
     goliath.attaquer(david);
     david.boirePotionDeVie(20);
@@ -14,11 +17,10 @@ int main()
     goliath.changerArme("Double hache", 40);
     david.etatPersonnage();
     goliath.attaquer(david);
-    david.etatPersonnage();
+    goliath.attaquer(david);
     goliath.attaquer(david);
     david.etatPersonnage();
-    goliath.attaquer(david);
-    david.etatPersonnage();
-    cout << "hello" << endl;
+    hache.afficher();
+    epee.afficher();
     return 0;
 }
