@@ -15,5 +15,12 @@ int main()
     cout << (chrono2 == chrono3) << endl;
     cout << (chrono2 < chrono3) << endl;
     cout << (chrono1 < chrono2) << endl;
+
+    chrono1 += chrono2;
+
+    Duree chrono4 = chrono1 + chrono3;
+
+    cout << chrono4 << endl;
+
     return 0;
 }
